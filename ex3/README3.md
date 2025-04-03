@@ -23,12 +23,10 @@
 # Create a dataset using the sql script provided in the folder 3-db/
 
 
-copy the populatedb.sql into the container:
+copying the populatedb.sql into the container:
 
-docker cp /home/toma/Desktop/tremend_devops/ex3/populatedb.sql postgres_container:/populatedb.sql
-run the script to initialize the db:
-
-docker exec -it postgres_container psql -U ituser -d company_db -f /populatedb.sql
+ - docker cp /home/toma/Desktop/tremend_devops/ex3/populatedb.sql postgres_container:/populatedb.sql
+run the script to initialize the db: docker exec -it postgres_container psql -U ituser -d company_db -f /populatedb.sql
 
 # Run the following SQL queries:
 
@@ -47,7 +45,8 @@ docker exec -it postgres_container psql -U ituser -d company_db -f /populatedb.s
 read -p "Department name: " department
 
 docker exec -i postgres_container psql -U ituser -d company_db -c "SELECT e.first_name, e.last_name FROM employees e JOIN departments d ON e.department_id = d.department_id WHERE d.department_name = '$department';"
-Calculate the highest and lowest salaries per department.
+
+## Calculate the highest and lowest salaries per department.
 
 so, we definitely have to join departmets, employees, and salaries, because we need the departments and salaries, and these tables are not related; so employees is the table that bridges the needed information
 everytime we have to count something "per column" (department here), we clearly can write it by coupling GROUP BY and HAVING; the simplest way I could do this is by linking/chaining all the tables by having the employees as the middle table; 
