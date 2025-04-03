@@ -90,3 +90,19 @@ Challenges:
 ## Creates a second admin user called "admin_cee"
 ## Imports the dataset created at Step 4.
 ## Executes the queries from Step 3 and outputs the results to a log file.
+
+
+# Bonus
+
+## Mount a persistent volume to store PostgreSQL data.
+
+(https://docs.docker.com/get-started/docker-concepts/running-containers/persisting-container-data/)
+
+We run: "docker volume create pg_data"
+
+Then we run the container with the persistence component (mount it): 
+"docker run --name postgres_container -e POSTGRES_USER=ituser -e POSTGRES_PASSWORD=itpassword -e POSTGRES_DB=company_db -d -v pg_data:/var/lib/postgresql/data postgres"
+
+Check the usage to see if it works:
+"docker volume inspect pg_data"
+
