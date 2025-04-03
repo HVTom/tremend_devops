@@ -107,7 +107,31 @@ Use 'docker scan' to run Snyk tests against images to find vulnerabilities and l
 
 ## Test the Dockerized application to ensure it functions correctly within the
 container.
- - docker run -p 8080:8080 node-notes-app
- 
+ - docker run -p 8080:8080 node-notes-app # run project on port 8080
+
+```bash
+ docker run -p 8080:8080 node-notes-app
+node:internal/modules/cjs/loader:1031
+  throw err;
+  ^
+
+Error: Cannot find module 'express'
+Require stack:
+- /app/notes.js
+    at Function.Module._resolveFilename (node:internal/modules/cjs/loader:1028:15)
+    at Function.Module._load (node:internal/modules/cjs/loader:873:27)
+    at Module.require (node:internal/modules/cjs/loader:1100:19)
+    at require (node:internal/modules/cjs/helpers:119:18)
+    at Object.<anonymous> (/app/notes.js:1:17)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+    at Module.load (node:internal/modules/cjs/loader:1076:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:911:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [ '/app/notes.js' ]
+}
+```
+ running this throws an error; upon inspecting package.js, express dependency is missing; we'll have to add it
 
 ## Testing steps
