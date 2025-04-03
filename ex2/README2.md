@@ -132,6 +132,10 @@ Require stack:
   requireStack: [ '/app/notes.js' ]
 }
 ```
- running this throws an error; upon inspecting package.js, express dependency is missing; we'll have to add it
+ running this throws an error; upon inspecting package.js, express dependency is missing; we'll have to add it;
+
+ I added as dependency in the package.json a stable version of express: "express": "^4.18.2" that works with node 16 (also added as a random older version for stablity);
+
+ 
 
 ## Testing steps
