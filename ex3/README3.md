@@ -76,15 +76,17 @@ Challenges:
 
 
  - (https://davejansen.com/how-to-dump-and-restore-a-postgresql-database-from-a-docker-container/)
-we could use the command "
+ - we could use the command "docker exec -i pg_container_name /bin/bash -c "PGPASSWORD=pg_password pg_dump --username pg_username database_name" > /desired/path/on/your/machine/dump.sql"
+ - so here I'll have "docker exec -i postgres_container /bin/bash -c "PGPASSWORD=itpassword pg_dump --username ituser company_db" > /home/toma/Desktop/tremend_devops/ex3/dump.sql"
 
-docker exec -i pg_container_name /bin/bash -c "PGPASSWORD=pg_password pg_dump --username pg_username database_name" > /desired/path/on/your/machine/dump.sql", so here i'll have "docker exec -i postgres_container /bin/bash -c "PGPASSWORD=itpassword pg_dump --username ituser company_db" > /home/toma/Desktop/tremend_devops/ex3/dump.sql"
+
 
 # Write a Bash script that:
 
 ## Automates the database creation process.
 
  - based on what I've written in the previous exercises, taking the commands and dumping them into a bash file could initially be a starting point to having just a siingle runnable file, with all the commands one after another (all the comments and explanations are written inside the bash script)
+
 ## Creates a second admin user called "admin_cee"
 ## Imports the dataset created at Step 4.
 ## Executes the queries from Step 3 and outputs the results to a log file.
