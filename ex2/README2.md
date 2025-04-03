@@ -23,8 +23,12 @@
 # Local testing
 
 ## Build the Docker image locally.
+ - (https://docs.docker.com/get-started/docker-concepts/building-images/build-tag-and-publish-an-image/)
+ - the build and tag is done with this command: "docker build -t node-notes-app"
 
 ## Test the Dockerized application to ensure it functions correctly within the
 container.
+ - docker run -p 8080:8080 node-notes-app
+ 
 
 ## Testing steps
