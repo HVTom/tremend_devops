@@ -1,5 +1,5 @@
 -- Use the existing database
-USE company_db;
+--USE company_db;
 
 -- Departments table
 CREATE TABLE departments (
