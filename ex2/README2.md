@@ -3,8 +3,10 @@
 # Chosen project: nodejs
 
 # Create a Dockerfile:
+ 
+## Write a Dockerfile to containerize the application chosen at the previous step.
 
-## Write a Dockerfile to containerize the application chosen at the previousstep.
+ -> https://github.com/HVTom/tremend_devops/blob/main/ex2/Dockerfile
 
 ## Include necessary instructions to set up the environment and dependencies.
 
@@ -16,3 +18,13 @@
       console.log(`Server running on http://localhost:${PORT}`);
    });
 ```
+
+
+# Local testing
+
+## Build the Docker image locally.
+
+## Test the Dockerized application to ensure it functions correctly within the
+container.
+
+## Testing steps
