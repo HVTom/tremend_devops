@@ -11,6 +11,9 @@ Since i use linux, docker desktop  asked me to set the "pass" credential; i foll
   docker run -it ubuntu
 
  - ran it as is - Docker creates a container with the specified image/OS, in interactive mode
+<img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/docker_get_ubuntu_command.png" width="auto" height="auto" alt="Docker Get Ubuntu Command">
+<img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/ubuntu_command_root.png" width="400" height="225" alt="Ubuntu Command Root">
+<img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/docker_desktop_ubuntu_confirm.png" width="auto" height="auto" alt="Docker Desktop Ubuntu Confirm">
 
 
 
@@ -20,9 +23,12 @@ Since i use linux, docker desktop  asked me to set the "pass" credential; i foll
 The pulled image is minimal, so we have to install a tool that can test the reachability of a host. We have at least 4 options (https://linuxhandbook.com/find-website-ip-address-linux/)
  <img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/install_ping.png" width="auto" height="auto" alt="Install Ping">
  - installed ping using "apt-get install -y iputils-ping command" (insert image)  (https://tecadmin.net/resolved-bash-ping-command-not-found-error/)
+ <img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/ping_cloudflare.png" width="400" height="225" alt="Ping Cloudflare">
  - running "ping cloudflare.com" returns an address, but then is idle;
  - installed another tool to check the address: apt-get install dnsutils -y  , used -y to automatically say yes to install prompts (https://www.curiouslychase.com/posts/install-dig-and-nslookup-dependencies-on-docker-containers#install-dig-and-nslookup-on-ubuntu-debian)
  <img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/install_dnsutils.png" width="auto" height="auto" alt="Install DNSUtils">
+ <img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/ns_lookup.png" width="400" height="225" alt="NS Lookup">
+
  - now that we have dnsutils, we can use "dig cloudflare.com" https://www.tecmint.com/install-dig-and-nslookup-in-linux/ to check the address again (insert images here)
 we see that we get 104.16.132.229 and  104.16.133.229
 <img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/dig_cloudflare.png" width="auto" height="auto" alt="Dig Cloudflare">
@@ -42,6 +48,7 @@ CHALLENGE: trying to understand the dns mapping
 Local mapping between googgle's public dns ip (8.8.8.8) and the hostname google-dns
  - it needs a (static) entry in the /etc/hosts file
  - to edit /etc/hots, we run "nano /etc/hosts"
+ <img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/no_nano.png" width="400" height="225" alt="No Nano">
  - nano is not installed, so we install nano:
  <img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/nano_install.png" width="auto" height="auto" alt="Nano Install">
  - run "apt-get install nano -y"; then we can proceed by editing the entries: "nano /etc/hosts", then adding the line "8.8.8.8 google-dns" to map the address to the hostname; ctrl+O to write, Enter to save, ctrl+x to exit, "cat /etc/hosts" to show the file contents and verify the update
@@ -68,6 +75,8 @@ nameserver 192.168.65.5;
 <img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/resolv_conf_initial.png" width="auto" height="auto" alt="Resolv Conf Initial">
  - edit with nano: "nano /etc/resolv.conf" -> "root@2c51f79ce470:/# cat /etc/resolv.conf DNS requests are forwarded to the host. DHCP DNS options are ignored.
 <img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/nano_dns_verify.png" width="auto" height="auto" alt="Nano DNS Verify">
+<img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/ping_google-dns.png" width="400" height="225" alt="Ping Google DNS">
+
 
 
 #nameserver 192.168.65.5  nameserver 8.8.8.8"
