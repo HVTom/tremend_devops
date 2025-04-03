@@ -1,3 +1,31 @@
+<img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/check_dns_port_open.png" width="400" height="225" alt="Check DNS Port Open">
+<img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/cloudflare_2nd_lookup.png" width="400" height="225" alt="Cloudflare 2nd Lookup">
+<img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/debian_default_html.png" width="400" height="300" alt="Debian Default HTML">
+<img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/dig_cloudflare.png" width="400" height="225" alt="Dig Cloudflare">
+<img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/docker_desktop_ubuntu_confirm.png" width="400" height="300" alt="Docker Desktop Ubuntu Confirm">
+<img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/docker_get_ubuntu_command.png" width="400" height="225" alt="Docker Get Ubuntu Command">
+<img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/ex1_bonus_final_message.png" width="400" height="225" alt="Ex1 Bonus Final Message">
+<img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/google_dns_mapping_nano.png" width="400" height="300" alt="Google DNS Mapping Nano">
+<img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/install_dnsutils.png" width="400" height="225" alt="Install DNSUtils">
+<img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/install_ping.png" width="400" height="225" alt="Install Ping">
+<img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/ls_etc_nginx.png" width="400" height="225" alt="LS /etc/nginx">
+<img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/nano_dns_verify.png" width="400" height="300" alt="Nano DNS Verify">
+<img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/nano_install.png" width="400" height="225" alt="Nano Install">
+<img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/nginx_changeport_problems.png" width="400" height="225" alt="Nginx Change Port Problems">
+<img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/nginx_default_port.png" width="400" height="225" alt="Nginx Default Port">
+<img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/nginx_portchange_nmap_check.png" width="400" height="225" alt="Nginx Port Change Nmap Check">
+<img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/nginx_root_var_default_html.png" width="400" height="300" alt="Nginx Root Var Default HTML">
+<img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/nginx_start_check_running.png" width="400" height="225" alt="Nginx Start Check Running">
+<img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/nmap_localhost_nginx_port.png" width="400" height="225" alt="Nmap Localhost Nginx Port">
+<img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/no_nano.png" width="400" height="225" alt="No Nano">
+<img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/ns_lookup.png" width="400" height="225" alt="NS Lookup">
+<img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/ping_cloudflare.png" width="400" height="225" alt="Ping Cloudflare">
+<img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/ping_dig_nslookup.png" width="400" height="225" alt="Ping Dig NSLookup">
+<img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/ping_google-dns.png" width="400" height="225" alt="Ping Google DNS">
+<img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/resolv_conf_initial.png" width="400" height="225" alt="Resolv Conf Initial">
+<img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/ubuntu_command_root.png" width="400" height="225" alt="Ubuntu Command Root">
+
+
 # Exercise 1
 
 ### The following tasks should be performed from within a Docker container. 
@@ -101,4 +129,7 @@ Nmap done: 1 IP address (1 host up) scanned in 0.09 seconds"
 
  - in the "etc/nginx/sites-enabled/default" file there are the default html files that come with NGinx: "root /var/www/html;"
  - if we display the directory contents there's a default debian file.html: "root@2c51f79ce470:/# ls /var/www/html/  -> index.nginx-debian.html"
- - edited the messgae with nano
+ - edited the message with nano
+<img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/ubuntu_command_root.png" width="400" height="225" alt="Ubuntu Command Root">
+<img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/ex1_bonus_final_message.png" width="400" height="225" alt="Ex1 Bonus Final Message">
+
