@@ -87,7 +87,7 @@ resolv.conf changes are temporay, restatring the os reverts the changes
 
 ### Perform another public IP lookup for cloudflare.com and compare the results.
 - now the second lookup has the 8.8.8.8 server/address;
-<img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/cloudflare_2nd_lookup.png" width="auto" height="auto" alt="Cloudflare 2nd Lookup">
+<img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/cloudflare_2nd lookup.png" width="auto" height="auto" alt="Cloudflare 2nd Lookup">
 
 
 
