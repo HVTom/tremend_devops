@@ -9,7 +9,6 @@
 
 ## Create a database called "company_db". 
 ## Do not use the default user, instead use one called "ituser".
-<img src="https://github.com/HVTom/tremend_devops/blob/main/ex3/ex3_pics/dump.png" width="auto" height="auto" alt="Dump">
 <img src="https://github.com/HVTom/tremend_devops/blob/main/ex3/ex3_pics/postgres_container_proof.png" width="auto" height="auto" alt="Postgres Container Proof">
 <img src="https://github.com/HVTom/tremend_devops/blob/main/ex3/ex3_pics/docker_desktop_postgres_credentials.png" width="auto" height="auto" alt="Docker Desktop Postgres Credentials">
 
@@ -66,6 +65,8 @@ Challenges:
 
 
 # Dump the dataset into a file.
+<img src="https://github.com/HVTom/tremend_devops/blob/main/ex3/ex3_pics/dump.png" width="auto" height="auto" alt="Dump">
+
 
  - (https://davejansen.com/how-to-dump-and-restore-a-postgresql-database-from-a-docker-container/)
 we could use the command "
