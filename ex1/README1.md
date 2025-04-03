@@ -126,7 +126,8 @@ Nmap done: 1 IP address (1 host up) scanned in 0.09 seconds"
 
  - in the "etc/nginx/sites-enabled/default" file there are the default html files that come with NGinx: "root /var/www/html;"
  - if we display the directory contents there's a default debian file.html: "root@2c51f79ce470:/# ls /var/www/html/  -> index.nginx-debian.html"
- - edited the message with nano
+<img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/debian_defautl_html.png" width="auto" height="auto" alt="Debian Default HTML">
 <img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/nginx_root_var_default_html.png" width="auto" height="auto" alt="Nginx Root Var Default HTML">
 <img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/ex1_bonus_final_message.png" width="auto" height="auto" alt="Ex1 Bonus Final Message">
+ - edited the message with nano
 
