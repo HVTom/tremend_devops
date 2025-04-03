@@ -1,31 +1,3 @@
-<img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/check_dns_port_open.png" width="auto" auto="auto" alt="Check DNS Port Open">
-<img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/cloudflare_2nd_lookup.png" width="auto" auto="225" alt="Cloudflare 2nd Lookup">
-<img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/debian_default_html.png" width="auto" auto="300" alt="Debian Default HTML">
-<img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/dig_cloudflare.png" width="auto" auto="225" alt="Dig Cloudflare">
-<img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/docker_desktop_ubuntu_confirm.png" width="auto" auto="300" alt="Docker Desktop Ubuntu Confirm">
-<img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/docker_get_ubuntu_command.png" width="auto" auto="225" alt="Docker Get Ubuntu Command">
-<img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/ex1_bonus_final_message.png" width="auto" auto="225" alt="Ex1 Bonus Final Message">
-<img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/google_dns_mapping_nano.png" width="auto" auto="300" alt="Google DNS Mapping Nano">
-<img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/install_dnsutils.png" width="auto" auto="225" alt="Install DNSUtils">
-<img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/install_ping.png" width="auto" auto="225" alt="Install Ping">
-<img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/ls_etc_nginx.png" width="auto" auto="225" alt="LS /etc/nginx">
-<img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/nano_dns_verify.png" width="auto" auto="300" alt="Nano DNS Verify">
-<img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/nano_install.png" width="auto" auto="225" alt="Nano Install">
-<img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/nginx_changeport_problems.png" width="auto" auto="225" alt="Nginx Change Port Problems">
-<img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/nginx_default_port.png" width="auto" auto="225" alt="Nginx Default Port">
-<img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/nginx_portchange_nmap_check.png" width="auto" auto="225" alt="Nginx Port Change Nmap Check">
-<img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/nginx_root_var_default_html.png" width="auto" auto="300" alt="Nginx Root Var Default HTML">
-<img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/nginx_start_check_running.png" width="auto" auto="225" alt="Nginx Start Check Running">
-<img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/nmap_localhost_nginx_port.png" width="auto" auto="225" alt="Nmap Localhost Nginx Port">
-<img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/no_nano.png" width="auto" auto="225" alt="No Nano">
-<img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/ns_lookup.png" width="auto" auto="225" alt="NS Lookup">
-<img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/ping_cloudflare.png" width="auto" auto="225" alt="Ping Cloudflare">
-<img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/ping_dig_nslookup.png" width="auto" auto="225" alt="Ping Dig NSLookup">
-<img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/ping_google-dns.png" width="auto" auto="225" alt="Ping Google DNS">
-<img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/resolv_conf_initial.png" width="auto" auto="225" alt="Resolv Conf Initial">
-<img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/ubuntu_command_root.png" width="auto" auto="225" alt="Ubuntu Command Root">
-
-
 # Exercise 1
 
 ### The following tasks should be performed from within a Docker container. 
@@ -38,7 +10,7 @@ Since i use linux, docker desktop  asked me to set the "pass" credential; i foll
 
   docker run -it ubuntu
 
-ran it as is - Docker creates a container with the specified image/OS, in interactive mode
+ - ran it as is - Docker creates a container with the specified image/OS, in interactive mode
 
 
 
@@ -46,11 +18,15 @@ ran it as is - Docker creates a container with the specified image/OS, in intera
 ### Lookup the Public IP of cloudflare.com
 
 The pulled image is minimal, so we have to install a tool that can test the reachability of a host. We have at least 4 options (https://linuxhandbook.com/find-website-ip-address-linux/)
+ <img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/install_ping.png" width="auto" height="auto" alt="Install Ping">
  - installed ping using "apt-get install -y iputils-ping command" (insert image)  (https://tecadmin.net/resolved-bash-ping-command-not-found-error/)
  - running "ping cloudflare.com" returns an address, but then is idle;
  - installed another tool to check the address: apt-get install dnsutils -y  , used -y to automatically say yes to install prompts (https://www.curiouslychase.com/posts/install-dig-and-nslookup-dependencies-on-docker-containers#install-dig-and-nslookup-on-ubuntu-debian)
+ <img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/install_dnsutils.png" width="auto" height="auto" alt="Install DNSUtils">
  - now that we have dnsutils, we can use "dig cloudflare.com" https://www.tecmint.com/install-dig-and-nslookup-in-linux/ to check the address again (insert images here)
 we see that we get 104.16.132.229 and  104.16.133.229
+<img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/dig_cloudflare.png" width="auto" height="auto" alt="Dig Cloudflare">
+
 
 
 
@@ -66,9 +42,12 @@ CHALLENGE: trying to understand the dns mapping
 Local mapping between googgle's public dns ip (8.8.8.8) and the hostname google-dns
  - it needs a (static) entry in the /etc/hosts file
  - to edit /etc/hots, we run "nano /etc/hosts"
- - nano is not installed, so we install nano
+ - nano is not installed, so we install nano:
+ <img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/nano_install.png" width="auto" height="auto" alt="Nano Install">
  - run "apt-get install nano -y"; then we can proceed by editing the entries: "nano /etc/hosts", then adding the line "8.8.8.8 google-dns" to map the address to the hostname; ctrl+O to write, Enter to save, ctrl+x to exit, "cat /etc/hosts" to show the file contents and verify the update
+ <img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/google_dns_mapping_nano.png" width="auto" height="auto" alt="Google DNS Mapping Nano">
  - test with ping, dig and nslookup and we get: "PING google-dns (8.8.8.8) 56(84) bytes of data."; (ping fails as before yet the single line shown is the desired address); nslookup and dig don't recognize the local mapping;
+<img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/ping_dig_nslookup.png" width="auto" auto="auto" alt="Ping Dig NSLookup">
 
 
 
