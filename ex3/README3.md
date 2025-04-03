@@ -33,7 +33,8 @@
 copying the populatedb.sql into the container:
 
  - docker cp /home/toma/Desktop/tremend_devops/ex3/populatedb.sql postgres_container:/populatedb.sql
-run the script to initialize the db: docker exec -it postgres_container psql -U ituser -d company_db -f /populatedb.sql
+run the script to initialize the db:
+ - docker exec -it postgres_container psql -U ituser -d company_db -f /populatedb.sql
 
 # Run the following SQL queries:
 
@@ -48,16 +49,22 @@ run the script to initialize the db: docker exec -it postgres_container psql -U 
  - to take user input, a bash script could be a simple way to take user input, and use string interpolation at the end; here we just need to join the tables using the department_id columns, and condition the selection based on input department value: 
 
 #!/bin/bash
-
 read -p "Department name: " department
 
 docker exec -i postgres_container psql -U ituser -d company_db -c "SELECT e.first_name, e.last_name FROM employees e JOIN departments d ON e.department_id = d.department_id WHERE d.department_name = '$department';"
 
 ## Calculate the highest and lowest salaries per department.
 
-so, we definitely have to join departmets, employees, and salaries, because we need the departments and salaries, and these tables are not related; so employees is the table that bridges the needed information
-everytime we have to count something "per column" (department here), we clearly can write it by coupling GROUP BY and HAVING; the simplest way I could do this is by linking/chaining all the tables by having the employees as the middle table; 
-docker exec -it postgres_container psql -U ituser -d company_db -c " SELECT d.department_name, MIN(s.salary) AS min_salary, MAX(s.salary) AS max_salary FROM employees e JOIN departments d ON e.department_id = d.department_id JOIN salaries s ON e.employee_id = s.employee_id GROUP BY d.department_name;"
+So, we definitely have to join departmets, employees, and salaries, because we need the departments and salaries, and these tables are not related; so employees is the table that bridges the needed information
+everytime we have to count something "per column" (department here), we clearly can write it by coupling GROUP BY and HAVING. The simplest way I could do this is by linking/chaining all the tables by having the employees as the middle table:  
+
+ docker exec -it postgres_container psql -U ituser -d company_db -c 
+ "SELECT d.department_name, MIN(s.salary) AS min_salary, MAX(s.salary) AS max_salary 
+  FROM employees e 
+  JOIN departments d ON e.department_id = d.department_id 
+  JOIN salaries s ON e.employee_id = s.employee_id 
+  GROUP BY d.department_name;"
+
 
 Challenges: 
  - remembering how to write complex queries (third query)
