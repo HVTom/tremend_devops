@@ -62,7 +62,8 @@ Local mapping between googgle's public dns ip (8.8.8.8) and the hostname google-
  - DNS port is port 53
  - for port checking we need other tools, like nmap
  - we intall nmap first: "sudo apt install nmap"
-<img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/nginx_portchange_nmap_check.png" width="auto" height="auto" alt="Nmap Installation">
+<img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/check_dns_port_open.png" width="auto" height="auto" alt="Check DNS Port Open">
+
  - (https://phoenixnap.com/kb/nmap-scan-open-ports) we run the command -> "nmap -p 53 google-dns" (looks for port 53 on the specified target address/host, and use the hostname (could have used the ip address directly but this way we can check if it resolves to the mapped address)
 (insert image) -  port is confirmed as opened
 
@@ -104,12 +105,13 @@ nginx is running
 
 
 ### Find the Listening Port for Nginx
-
+<img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/nginx_portchange_nmap_check.png" width="auto" height="auto" alt="Nmap Installation">
 Ee can search inside the conf files to see the default assigned port: 
  - first I tried  to search inside the config file "cat /etc/nginx/nginx.conf", but there s no useful info here;
+ <img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/ls_etc_nginx.png" width="auto" height="auto" alt="LS /etc/nginx">
  - then, in the default html testing page "cat nano /etc/nginx/sites-enabled/default" the port is 80; (insert page);
- <img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/nginx_changeport_problems.png" width="auto" height="auto" alt="Nginx Change Port Problems">
  <img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/nginx_default_port.png" width="auto" height="auto" alt="Nginx Default Port">
+ <img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/nginx_changeport_problems.png" width="auto" height="auto" alt="Nginx Change Port Problems">
  - by also using "nmap 127.0.0.1"  we can see what ports are opened for the localhost, an port 80 is also found here
  <img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/nginx_portchange_nmap_check.png" width="auto" height="auto" alt="Nginx Port Change Nmap Check">
 
