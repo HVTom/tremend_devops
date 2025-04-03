@@ -125,9 +125,8 @@ Ee can search inside the conf files to see the default assigned port:
 Nmap done: 1 IP address (1 host up) scanned in 0.09 seconds"
 
  - in the "etc/nginx/sites-enabled/default" file there are the default html files that come with NGinx: "root /var/www/html;"
- <img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/nginx_root_var_default_html.png" width="auto" height="auto" alt="Nginx Root Var Default HTML">
  - if we display the directory contents there's a default debian file.html: "root@2c51f79ce470:/# ls /var/www/html/  -> index.nginx-debian.html"
  - edited the message with nano
-<img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/ubuntu_command_root.png" width="auto" height="auto" alt="Ubuntu Command Root">
+<img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/nginx_root_var_default_html.png" width="auto" height="auto" alt="Nginx Root Var Default HTML">
 <img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/ex1_bonus_final_message.png" width="auto" height="auto" alt="Ex1 Bonus Final Message">
 
