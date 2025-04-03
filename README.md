@@ -4,9 +4,10 @@
 # Project Setup Commands
 
 ## Images of Steps Taken
+https://github.com/HVTom/tremend_devops/blob/main/project_setup_commands_pics/add_init_readmes.png
 
 ### 1. Adding and initializing readmes
-<img src="https://github.com/HVTom/tremend_devops/tree/main/project_setup_commands_pics/add_init_readmes.png" alt="Adding and Initializing Readmes" width="600">
+<img src="https://github.com/HVTom/tremend_devops/blob/main/project_setup_commands_pics/add_init_readmes.png" alt="Adding and Initializing Readmes" width="600">
 
 ### 2. Directory Structure
 <img src="https://github.com/HVTom/tremend_devops/tree/main/project_setup_commands_pics/dir_structure.png" alt="Directory Structure" width="600">
