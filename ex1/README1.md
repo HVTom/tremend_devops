@@ -52,21 +52,23 @@ Local mapping between googgle's public dns ip (8.8.8.8) and the hostname google-
 
 
 ### Check if the DNS Port is Open for google-dns
-
  - DNS port is port 53
  - for port checking we need other tools, like nmap
  - we intall nmap first: "sudo apt install nmap"
+<img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/nginx_portchange_nmap_check.png" width="auto" height="auto" alt="Nmap Installation">
  - (https://phoenixnap.com/kb/nmap-scan-open-ports) we run the command -> "nmap -p 53 google-dns" (looks for port 53 on the specified target address/host, and use the hostname (could have used the ip address directly but this way we can check if it resolves to the mapped address)
 (insert image) -  port is confirmed as opened
 
 
 
 ### Modify the System to Use Google’s Public DNS
-
  - changed the nameserver to 8.8.8.8 instead of the default local configuration
  - (https://yuminlee2.medium.com/linux-networking-dns-7ff534113f7d)  there's a config file named resolv.conf that handles the DNS settings; we can inspect it by running "cat /etc/resolv.conf" ->root@2c51f79ce470:/# cat /etc/resolv.conf : DNS requests are forwarded to the host. DHCP DNS options are ignored.
 nameserver 192.168.65.5;
+<img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/resolv_conf_initial.png" width="auto" height="auto" alt="Resolv Conf Initial">
  - edit with nano: "nano /etc/resolv.conf" -> "root@2c51f79ce470:/# cat /etc/resolv.conf DNS requests are forwarded to the host. DHCP DNS options are ignored.
+<img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/nano_dns_verify.png" width="auto" height="auto" alt="Nano DNS Verify">
+
 
 #nameserver 192.168.65.5  nameserver 8.8.8.8"
 resolv.conf changes are temporay, restatring the os reverts the changes
@@ -75,7 +77,8 @@ resolv.conf changes are temporay, restatring the os reverts the changes
 
 
 ### Perform another public IP lookup for cloudflare.com and compare the results.
-- insert img; now the second lookup has the 8.8.8.8 server/address;
+- now the second lookup has the 8.8.8.8 server/address;
+<img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/cloudflare_2nd_lookup.png" width="auto" height="auto" alt="Cloudflare 2nd Lookup">
 
 
 
@@ -84,6 +87,7 @@ resolv.conf changes are temporay, restatring the os reverts the changes
 
  - https://www.digitalocean.com/community/tutorials/how-to-run-nginx-in-a-docker-container-on-ubuntu-22-04, https://www.tecmint.com/change-nginx-port-in-linux/
  - install nginx in the current container: "apt install -y nginx"
+ <img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/nginx_start_check_running.png" width="400" height="225" alt="Nginx Start Check Running">
  - (https://stackoverflow.com/questions/35220654/how-to-verify-if-nginx-is-running-or-not) -> start and check running: root@2c51f79ce470:/# service nginx start
 Starting nginx nginx [ OK ] root@2c51f79ce470:/# service nginx status
 nginx is running
@@ -95,7 +99,10 @@ nginx is running
 Ee can search inside the conf files to see the default assigned port: 
  - first I tried  to search inside the config file "cat /etc/nginx/nginx.conf", but there s no useful info here;
  - then, in the default html testing page "cat nano /etc/nginx/sites-enabled/default" the port is 80; (insert page);
+ <img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/nginx_changeport_problems.png" width="400" height="225" alt="Nginx Change Port Problems">
+ <img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/nginx_default_port.png" width="auto" height="auto" alt="Nginx Default Port">
  - by also using "nmap 127.0.0.1"  we can see what ports are opened for the localhost, an port 80 is also found here
+ <img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/nginx_portchange_nmap_check.png" width="auto" height="auto" alt="Nginx Port Change Nmap Check">
 
 
 
@@ -107,6 +114,7 @@ Ee can search inside the conf files to see the default assigned port:
 Nmap done: 1 IP address (1 host up) scanned in 0.09 seconds"
 
  - in the "etc/nginx/sites-enabled/default" file there are the default html files that come with NGinx: "root /var/www/html;"
+ <img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/nginx_root_var_default_html.png" width="400" height="300" alt="Nginx Root Var Default HTML">
  - if we display the directory contents there's a default debian file.html: "root@2c51f79ce470:/# ls /var/www/html/  -> index.nginx-debian.html"
  - edited the message with nano
 <img src="https://github.com/HVTom/tremend_devops/blob/main/ex1/ex1_pics/ubuntu_command_root.png" width="auto" auto="225" alt="Ubuntu Command Root">
